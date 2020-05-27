@@ -9,21 +9,20 @@ import org.hibernate.event.spi.SaveOrUpdateEventListener;
 import com.javalive.entity.Book;
 
 public class SaveUpdateEventListenerImp implements SaveOrUpdateEventListener {
-   
-   private static Logger logger = LogManager
-            .getLogger(SaveUpdateEventListenerImp.class);
-   private static final long serialVersionUID = 1L;
 
-   @Override
-   public void onSaveOrUpdate(SaveOrUpdateEvent e) throws HibernateException {
+	private static Logger logger = LogManager.getLogger(SaveUpdateEventListenerImp.class);
+	private static final long serialVersionUID = 1L;
 
-      logger.info("onSaveOrUpdate is called.");
+	@Override
+	public void onSaveOrUpdate(SaveOrUpdateEvent e) throws HibernateException {
 
-      Object obj = e.getEntity();
-      if (obj instanceof Book) {
-         Book book = (Book) obj;
-         logger.info(book);
-      }
-   }
+		logger.info("onSaveOrUpdate is called.");
+
+		Object obj = e.getEntity();
+		if (obj instanceof Book) {
+			Book book = (Book) obj;
+			logger.info(book);
+		}
+	}
 
 }
