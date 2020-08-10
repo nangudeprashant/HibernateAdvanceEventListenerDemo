@@ -28,7 +28,7 @@ public class MainApp {
 			session.save(book);
 
 			// Load Book
-			Book book2 = session.get(Book.class, 3l);
+			Book book2 = session.get(Book.class, book.getId());
 			logger.info("Auther name before update - " + book2.getAuthor());
 
 			// Update Book
